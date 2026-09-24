@@ -3,19 +3,20 @@ package oop;
 import java.util.Scanner;
 
 public class Program {
-    
+
     Scanner beolvas = new Scanner(System.in);
     Pakli p = new Pakli();
-    
-    public void main(String[] args) {
-        p.trukk();
+
+    public static void main(String[] args) {
+        Program program = new Program();
+        program.trukk();
     }
-    
+
     private int melyik() {
-        System.out.print("Melyik oszlop? (1-3): \n");
+        System.out.print("\nMelyik oszlop? (1-3): ");
         int oszlop = beolvas.nextInt();
         while(oszlop < 1 || oszlop > 3){
-            System.out.print("Hibás, újra: \n");
+            System.out.print("Hibás, újra: ");
             oszlop = beolvas.nextInt();
         }
         return oszlop;
@@ -23,16 +24,20 @@ public class Program {
     
     private void kirak() {
         System.out.printf("%-10s%-10s%-10s\n", "1. o", "2. o", "3. o");
-        for (int i = 1; i < p.length; i++) {
-            System.out.printf("%-10s", p[i]);
-            if(i % 3 == 0){
-                System.out.println("");
+        for (int i = 0; i < p.getLapok().length; i++) {
+            System.out.printf("%-10s", p.getLapok()[i].megjelenit());
+            if(i++ % 3 == 0 && i != 0){
+                System.out.println();
             }
         }
     }
-    
+
     public void trukk() {
-        kirak();
-        melyik();
+        for (int i = 0; i < 3; i++) {
+            kirak();
+            int oszlop = melyik();
+            p.kever(oszlop);
+        }
+        p.ezVolt();
     }
 }

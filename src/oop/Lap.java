@@ -17,6 +17,6 @@ public class Lap {
     }
     
     public String megjelenit() {
-        return "Lap{" + "ertek=" + ertek + ", szin=" + szin + '}';
+        return szin + "_" + ertek;
     }
 }

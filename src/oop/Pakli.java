@@ -12,14 +12,14 @@ public class Pakli {
         
         switch(oszlop){
             case 1 -> {
-                for (int i = 1; i <= 7; i++) {
+                for (int i = 0; i <= 6; i++) {
                     ujLapok[i] = lapok[20-(i-1)*3];
                     ujLapok[i+7] = lapok[19-(i-1)*3];
                     ujLapok[i+14] = lapok[21-(i-1)*3];
                 }
             }
             case 2 -> {
-                for (int i = 1; i <= 7; i++) {
+                for (int i = 0; i <= 6; i++) {
                     ujLapok[i] = lapok[19-(i-1)*3];
                     ujLapok[i+7] = lapok[20-(i-1)*3];
                     ujLapok[i+14] = lapok[21-(i-1)*3];
@@ -27,7 +27,7 @@ public class Pakli {
             }
             
             case 3 -> {
-                for (int i = 1; i <= 7; i++) {
+                for (int i = 0; i <= 6; i++) {
                     ujLapok[i] = lapok[19-(i-1)*3];
                     ujLapok[i+7] = lapok[21-(i-1)*3];
                     ujLapok[i+14] = lapok[20-(i-1)*3];
