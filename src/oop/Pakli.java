@@ -25,7 +25,6 @@ public class Pakli {
                     ujLapok[i+14] = lapok[20-i*3];
                 }
             }
-            
             case 3 -> {
                 for (int i = 0; i <= 6; i++) {
                     ujLapok[i] = lapok[18-i*3];
@@ -34,7 +33,6 @@ public class Pakli {
                 }
             }
         }
-        
         lapok = ujLapok;
     }
     
