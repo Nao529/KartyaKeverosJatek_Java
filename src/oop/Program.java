@@ -23,14 +23,14 @@ public class Program {
     }
     
     private void kirak() {
-        System.out.printf("%-10s%-10s%-10s\n", "1. o", "2. o", "3. o");
-        for (int i = 0; i < p.getLapok().length; i++) {
-            System.out.printf("%-10s", p.getLapok()[i].megjelenit());
-            if(i++ % 3 == 0 && i != 0){
-                System.out.println();
-            }
+    System.out.printf("%-10s%-10s%-10s\n", "1. o", "2. o", "3. o");
+    for (int i = 0; i < p.getLapok().length; i++) {
+        System.out.printf("%-10s", p.getLapok()[i].megjelenit());
+        if ((i + 1) % 3 == 0) {
+            System.out.println();
         }
     }
+}
 
     public void trukk() {
         for (int i = 0; i < 3; i++) {
@@ -38,6 +38,6 @@ public class Program {
             int oszlop = melyik();
             p.kever(oszlop);
         }
-        p.ezVolt();
+        System.out.println("Ez volt a te kártyád: " + p.ezVolt().megjelenit());
     }
 }
