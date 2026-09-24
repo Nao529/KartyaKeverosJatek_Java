@@ -1,12 +1,62 @@
 package oop;
 
 public class Pakli {
-    private String[] lapok = new String[21];
+    private Lap[] lapok = new Lap[21];
     
     public Pakli(){
-        
+        feltolt();
     }
     
-    public String[] getLapok(){
+    public void kever(int oszlop){
+        Lap[] ujLapok = new Lap[22];
+        
+        switch(oszlop){
+            case 1 -> {
+                for (int i = 1; i <= 7; i++) {
+                    ujLapok[i] = lapok[20-(i-1)*3];
+                    ujLapok[i+7] = lapok[19-(i-1)*3];
+                    ujLapok[i+14] = lapok[21-(i-1)*3];
+                }
+            }
+            case 2 -> {
+                for (int i = 1; i <= 7; i++) {
+                    ujLapok[i] = lapok[19-(i-1)*3];
+                    ujLapok[i+7] = lapok[20-(i-1)*3];
+                    ujLapok[i+14] = lapok[21-(i-1)*3];
+                }
+            }
+            
+            case 3 -> {
+                for (int i = 1; i <= 7; i++) {
+                    ujLapok[i] = lapok[19-(i-1)*3];
+                    ujLapok[i+7] = lapok[21-(i-1)*3];
+                    ujLapok[i+14] = lapok[20-(i-1)*3];
+                }
+            }
+        }
+        
+        lapok = ujLapok;
+    }
+    
+    public void feltolt(){
+        String[] szinek = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Ász","Kir","Fel","X","IX","VIII"};
+        int db = 0;
+        for (String szin : szinek) {
+            for (String ertek : ertekek) {
+                if (db < 21){
+                    lapok[db++] = new Lap(szin, ertek);
+                }
+            }
+        }
+    }
+    
+    public Lap ezVolt(){
+        return lapok[11];
+    }
+    
+    public Lap[] getLapok(){
+        Lap[] masolat = lapok;
+        return masolat;
     }
 }
